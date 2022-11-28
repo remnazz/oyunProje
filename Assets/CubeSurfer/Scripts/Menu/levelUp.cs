@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class levelUp : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void levelUP()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
         { SceneManager.LoadScene(2); }

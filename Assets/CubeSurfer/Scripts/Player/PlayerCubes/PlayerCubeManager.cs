@@ -3,12 +3,13 @@ using DG.Tweening;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCubeManager : MonoBehaviour
 {
     private float stepLength = 0.043f;
     private float groundYValue = -0.0213f;
-    
+    public GameObject GameOverPanel;
     public List<CubeBehaviour> listOfCubeBehaviour = new List<CubeBehaviour>();
 
     private void Awake()
@@ -69,6 +70,10 @@ public class PlayerCubeManager : MonoBehaviour
             var playerTransform2 = PlayerBehaviour.Instance.transform;
             Vector3 groundTarget = new Vector3(0f, -0.016f, -0.14f);
             playerTransform2.DOLocalJump(groundTarget, 0.05f, 1, 0.5f);
+            GameOverPanel.SetActive(true);
+            
+            CoinText.coinAmount = 0;
+
 
             return;
         }
